@@ -29,7 +29,7 @@ app.post("/impacts", async (req, res) => {
 	res.send(response.choices[0].message.content)
 })
 
-app.get("/alternatives", async (req, res) => {
+app.post("/alternatives", async (req, res) => {
 	const product = req.body.product
 	const response = await openai.chat.completions.create({
 		model: "gpt-3.5-turbo",
